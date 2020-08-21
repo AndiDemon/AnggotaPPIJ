@@ -4,7 +4,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Transaction</strong>
+                                <strong class="card-title">Data Transaction by Andi</strong>
                                 <!-- <input type="button" class="btn btn-primary btn-sm" onclick="location.href='<?= base_url()?>';" value="Add User"> -->
                                 <button onclick="window.location.href='<?= base_url() ?>/transaction/create'" type="button" class="btn btn-primary">Add Transaction</button>
                             </div>

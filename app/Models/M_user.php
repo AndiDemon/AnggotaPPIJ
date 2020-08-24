@@ -8,6 +8,12 @@ class M_user extends Model{
         return $query->getResult('array');
 	}
 
+	public function get_countUser(){
+		//return $this->db->table('user')->get()->getResultArray();
+		$query=$this->db->query("SELECT count(user_id) as countUser FROM user");
+        return $query->getResult('array');
+	}
+
 	public function get_userWhere($name){
 		$query=$this->db->query("SELECT * FROM user a, account b, user_level c WHERE a.account_id=b.account_id AND b.user_level_id=c.user_level_id AND b.account_name='".$name."'");
         return $query->getResult('array');

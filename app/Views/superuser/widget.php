@@ -11,13 +11,10 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text">$<span class="count"><?php 
-                                                $i = 1;
-                                                $j = 2;
-                                                $total = $i + $j;
-                                                echo $total;
-                                            ?></span></div>
-                                            <div class="stat-heading"><?php echo "total = ".$total?></div>
+                                            <div class="stat-text">¥<span class="count">
+                                                10000
+                                            </span></div>
+                                            <div class="stat-heading">Revenue</div>
                                         </div>
                                     </div>
                                 </div>
@@ -34,8 +31,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">3435</span></div>
-                                            <div class="stat-heading">Sales</div>
+                                            <div class="stat-text"><span class="count">5</span></div>
+                                            <div class="stat-heading">Transaction</div>
                                         </div>
                                     </div>
                                 </div>
@@ -52,8 +49,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">349</span></div>
-                                            <div class="stat-heading">Templates</div>
+                                            <div class="stat-text"><span class="count">13</span></div>
+                                            <div class="stat-heading">Items</div>
                                         </div>
                                     </div>
                                 </div>
@@ -70,8 +67,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">2986</span></div>
-                                            <div class="stat-heading">Clients</div>
+                                            <div class="stat-text"><span class="count"><?= $countUser[0]['countUser'];?></span></div>
+                                            <div class="stat-heading">Users</div>
                                         </div>
                                     </div>
                                 </div>

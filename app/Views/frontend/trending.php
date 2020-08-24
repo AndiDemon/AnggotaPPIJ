@@ -3,146 +3,30 @@
     <section class="section-margin calc-60px">
       <div class="container">
         <div class="section-intro pb-60px">
-          <p>Popular Item in the market</p>
-          <h2>Trending <span class="section-intro__style">Product</span></h2>
+          <p>Newest Stuff</p>
+          <h2>Grab it <span class="section-intro__style">Fast</span></h2>
         </div>
         <div class="row">
+          <?php foreach($item as $row){?>
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
               <div class="card-product__img">
-                <img class="card-img" src="<?php echo base_url('templates/aroma/img/product/product1.png') ?>" alt="">
+                <img class="card-img" src="<?php echo base_url('upload').'/'.$row['image']?>" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
+                  <li>Due date : <?= $row['expired_date']; ?></li>
+                  <!-- <li><button><i class="ti-shopping-cart"></i></button></li>
+                  <li><button><i class="ti-heart"></i></button></li> -->
                 </ul>
               </div>
               <div class="card-body">
-                <p>Accessories</p>
-                <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
-                <p class="card-product__price">$150.00</p>
+                <p><?= $row['category'];?></p>
+                <h4 class="card-product__title"><a href="<?= base_url('product/getproduct').'/'.$row['item_id'];?>"><?= $row['item_name'];?></a></h4>
+                <p class="card-product__price"></p>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="<?php echo base_url('templates/aroma/img/product/product2.png') ?>" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Beauty</p>
-                <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="<?php echo base_url('templates/aroma/img/product/product3.png') ?>" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Decor</p>
-                <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="<?php echo base_url('templates/aroma/img/product/product4.png') ?>" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Decor</p>
-                <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="<?php echo base_url('templates/aroma/img/product/product5.png') ?>" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Accessories</p>
-                <h4 class="card-product__title"><a href="single-product.html">Man Office Bag</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="<?php echo base_url('templates/aroma/img/product/product6.png') ?>" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Kids Toy</p>
-                <h4 class="card-product__title"><a href="single-product.html">Charging Car</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="<?php echo base_url('templates/aroma/img/product/product7.png') ?>" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Accessories</p>
-                <h4 class="card-product__title"><a href="single-product.html">Blutooth Speaker</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div> 
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="<?php echo base_url('templates/aroma/img/product/product8.png') ?>" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>Kids Toy</p>
-                <h4 class="card-product__title"><a href="#">Charging Car</a></h4>
-                <p class="card-product__price">$150.00</p>
-              </div>
-            </div>
-          </div>
+        <?php }?>
+          
         </div>
       </div>
     </section>

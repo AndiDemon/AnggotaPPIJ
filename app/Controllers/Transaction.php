@@ -4,7 +4,7 @@ use App\Models\M_transaction;
 
 class Transaction extends BaseController
 {
-	protected $M_user;
+	protected $M_transaction;
 	public function __construct(){
 		$this->M_transaction = new M_transaction();
 		helper('form');

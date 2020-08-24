@@ -2,20 +2,21 @@
 use CodeIgniter\Controller;
 use App\Models\M_main;
 
-class Product extends BaseController
+
+class Finditem extends BaseController
 {
 	protected $M_main;
 	public function __construct(){
 		$this->M_main = new M_main();
-		helper('form');
 	}
-
-	public function getProduct($id)
+	public function index()
 	{
-		$data['item'] = $this->M_main->get_itemDetail($id);
+		$data['item'] = $this->M_main->get_find();
+		$data['category'] = $this->M_main->get_category();
+		
 		echo view('frontend/header');
 		echo view('frontend/menu');
-		echo view('frontend/single-product',$data);
+		echo view('frontend/category',$data);
 		//echo view('frontend/banner');
 		//echo view('frontend/carousel');
 		//echo view('frontend/trending');

@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="<?php echo base_url('templates/aroma/vendors/linericon/style.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('templates/aroma/vendors/owl-carousel/owl.theme.default.min.css') ?>">
-  <link rel="stylesheet" href="<?php echo base_url('templates/aroma/vendors/owl-carousel/owl.carousel.min.css') ?>vendors/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="<?php echo base_url('templates/aroma/vendors/owl-carousel/owl.carousel.min.css') ?>">
 
   <link rel="stylesheet" href="<?php echo base_url('templates/aroma/css/style.css') ?>">
 </head>

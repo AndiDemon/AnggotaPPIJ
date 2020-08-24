@@ -3,7 +3,7 @@
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand logo_h" href="index.html"><img src="<?php echo base_url('templates/aroma/img/tsunagu.png') ?>" alt=""></a>
+          <a class="navbar-brand logo_h" href="<?= base_url('main');?>"><img src="<?php echo base_url('templates/aroma/img/tsunagu.png') ?>" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -12,15 +12,16 @@
           </button>
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item submenu dropdown">
+              <li class="nav-item active"><a class="nav-link" href="<?= base_url('main');?>">Home</a></li>
+              <li class="nav-item active"><a class="nav-link" href="<?= base_url('finditem');?>">Items</a></li>
+              <!-- <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Items</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="category.html">Item Category</a></li>
                   <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
                 </ul>
-							</li>
+							</li> -->
               <!-- <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Blog</a>
@@ -52,5 +53,3 @@
     </div>
   </header>
 	<!--================ End Header Menu Area =================-->
-
-<main class="site-main">

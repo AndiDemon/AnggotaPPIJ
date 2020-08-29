@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Aug 21, 2020 at 01:58 PM
+-- Generation Time: Aug 24, 2020 at 04:03 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -33,13 +33,10 @@ CREATE TABLE `account` (
 
 INSERT INTO `account` (`account_id`, `account_name`, `account_password`, `user_level_id`) VALUES
 ('acc0001', 'demon', '74186adf7f381c816fbb8dab121a6973', '1'),
-('acc0002', 'andi', '', '3'),
 ('acc0918', 'Kang', 'd41d8cd98f00b204e9800998ecf8427e', '3'),
 ('acc0924', 'dsa', 'd41d8cd98f00b204e9800998ecf8427e', '3'),
-('acc1545', 'nanti', 'd41d8cd98f00b204e9800998ecf8427e', '2'),
 ('acc2959', 'hivi', 'd41d8cd98f00b204e9800998ecf8427e', '3'),
 ('acc5974', 'AndiDemon', 'useitfree', '2'),
-('acc6698', 'Azkar', 'd41d8cd98f00b204e9800998ecf8427e', '2'),
 ('acc8223', 'Andi', '872e8f531b03f28975948b039b11bf4b', '2'),
 ('acc8448', 'yes', 'd41d8cd98f00b204e9800998ecf8427e', '3'),
 ('acc9400', 'AndiPrademon', '872e8f531b03f28975948b039b11bf4b', '2');
@@ -93,7 +90,16 @@ CREATE TABLE `collection` (
 INSERT INTO `collection` (`collection_id`, `user_id`, `item_id`, `available_date`, `expired_date`) VALUES
 (1, 'usr0001', '1', '2020-07-20', '2020-07-27'),
 (2, 'usr0002', '2', '2020-08-12', '2020-08-24'),
-(7, 'usr2959', 'item54472020-08-1907:22:37', '2020-08-20', '2020-08-26');
+(7, 'usr2959', 'item54472020-08-1907:22:37', '2020-08-20', '2020-08-26'),
+(9, 'usr0002', 'item11762020-08-2308:52:38', '2020-08-24', '2020-09-08'),
+(10, 'usr0918', 'item12212020-08-2308:54:10', '2020-08-24', '2020-08-31'),
+(11, 'usr0918', 'item69052020-08-2308:55:30', '2020-08-26', '2020-09-09'),
+(12, 'usr0918', 'item1782020-08-2308:59:20', '2020-08-24', '2020-10-07'),
+(13, 'usr0918', 'item90532020-08-2309:00:38', '2020-09-09', '2020-09-23'),
+(14, 'usr0002', 'item17182020-08-2309:02:43', '2020-09-10', '2020-09-23'),
+(15, 'usr0002', 'item99352020-08-2309:04:32', '2020-09-15', '2020-08-31'),
+(16, 'usr0002', 'item3672020-08-2309:42:40', '2020-08-24', '2020-09-24'),
+(17, 'usr0002', 'item72272020-08-2310:11:17', '2020-08-27', '2020-09-22');
 
 -- --------------------------------------------------------
 
@@ -137,7 +143,16 @@ CREATE TABLE `item` (
 INSERT INTO `item` (`item_id`, `item_name`, `item_qty`, `item_detail`, `category_id`) VALUES
 ('1', 'accoustic guitar', 1, 'honey bee acoustic guitar, blue, very good condition', 1),
 ('2', 'desk', 1, 'a wooden desk', 5),
-('item54472020-08-1907:22:37', 'hanger', 10, 'hangers, normal', 13);
+('item11762020-08-2308:52:38', 'Formal shoes', 1, 'Very good quality of shoes. I will not use it anymore since I bought a new one.', 10),
+('item12212020-08-2308:54:10', 'Cup', 1, 'I will move to the other city, I will not bring this cup.', 4),
+('item17182020-08-2309:02:43', 'Laptop', 1, 'I sell this laptop for ¥30.000', 9),
+('item1782020-08-2308:59:20', 'Soccer ball', 1, 'My friend just left the city, and gave me this ball. But, I do not play soccer. Anyone can take it for free. ', 14),
+('item3672020-08-2309:42:40', 'Guitar', 1, 'Brand : Honey bee\r\nThe guitar quiality is still very good. like new.\r\nPlease use it properly. You can take it for free.', 1),
+('item54472020-08-1907:22:37', 'hanger', 10, 'hangers, normal', 13),
+('item69052020-08-2308:55:30', 'Plants', 2, 'I need to go back to my country, I can not bring these plants there. So please take care of them.', 13),
+('item72272020-08-2310:11:17', 'Minna No Nihongo Book', 1, 'I will go back to my country soon, you can take my Minna No Nihongo book to learn Japanese.\r\nIt\'s all Japanese. I learn a lot from this book.', 8),
+('item90532020-08-2309:00:38', 'Bag', 1, 'A spare bag that I got from a campaign in a festival. If you want please take it.', 4),
+('item99352020-08-2309:04:32', 'Bike', 1, 'I will leave this city soon, if you want a bike. Please take mine. ', 3);
 
 -- --------------------------------------------------------
 
@@ -159,7 +174,16 @@ INSERT INTO `item_image` (`item_image_id`, `item_id`, `image`) VALUES
 (1, '1', 'guitar.jpg'),
 (2, '2', 'desk.jpg'),
 (3, '1', 'guitar2.jpg'),
-(26, 'item54472020-08-1907:22:37', 'item544712020-08-1907:22:37.png');
+(26, 'item54472020-08-1907:22:37', 'hangers.jpg'),
+(28, 'item11762020-08-2308:52:38', 'item117612020-08-2308:52:38.jpg'),
+(29, 'item12212020-08-2308:54:10', 'item122112020-08-2308:54:10.jpg'),
+(30, 'item69052020-08-2308:55:30', 'item690512020-08-2308:55:30.jpg'),
+(31, 'item1782020-08-2308:59:20', 'item17812020-08-2308:59:20.jpg'),
+(32, 'item90532020-08-2309:00:38', 'item905312020-08-2309:00:38.jpg'),
+(33, 'item17182020-08-2309:02:43', 'item171812020-08-2309:02:43.jpg'),
+(34, 'item99352020-08-2309:04:32', 'item993512020-08-2309:04:32.jpg'),
+(35, 'item3672020-08-2309:42:40', 'item36712020-08-2309:42:40.jpg'),
+(36, 'item72272020-08-2310:11:17', 'item722712020-08-2310:11:17.jpg');
 
 -- --------------------------------------------------------
 
@@ -184,13 +208,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `email`, `contact`, `address`, `avatar`, `created`, `updated`, `account_id`) VALUES
 ('usr0001', 'demon.yunus666@gmail.com', '09063995288', 'tsu', '', '2020-07-20 06:21:08', '2020-07-20 06:21:08', 'acc0001'),
-('usr0002', 'whoiam@gmail.com', 'line:andidemon', 'tsu', '', '2020-07-20 06:21:08', '2020-07-20 06:21:08', 'acc0002'),
 ('usr0918', '', '', '', '', '2020-08-16 11:33:03', '2020-08-16 11:33:03', 'acc0918'),
 ('usr0924', '', '', '', '', '2020-08-16 11:33:54', '2020-08-16 11:33:54', 'acc0924'),
-('usr1545', '', '', '', '', '2020-08-16 11:34:03', '2020-08-16 11:34:03', 'acc1545'),
 ('usr2959', '', '', '', '', '2020-08-16 11:33:47', '2020-08-16 11:33:47', 'acc2959'),
 ('usr5974', 'demon@tsunagu.com', 'line : AndiDemon', 'Tsu Edobashi 1-123-1', '', '2020-07-21 17:51:48', '2020-07-21 17:51:48', 'acc5974'),
-('usr6698', '', '', '', '', '2020-08-16 11:33:15', '2020-08-16 11:33:15', 'acc6698'),
 ('usr8223', 'andi@tsunagu.com', 'Line : AndiDemon', 'Tsu Edobashi 1-123-1', '', '2020-07-21 17:54:04', '2020-07-21 17:54:04', 'acc8223'),
 ('usr8448', '', '', '', '', '2020-08-16 11:34:17', '2020-08-16 11:34:17', 'acc8448'),
 ('usr9400', 'AndiPrademon@tsunagu.com', 'Line : AndiDemon', 'Tsu Edobashi', '', '2020-07-21 17:55:44', '2020-07-21 17:55:44', 'acc9400');
@@ -281,7 +302,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `collection`
 --
 ALTER TABLE `collection`
-  MODIFY `collection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `collection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `dealing`
@@ -293,4 +314,4 @@ ALTER TABLE `dealing`
 -- AUTO_INCREMENT for table `item_image`
 --
 ALTER TABLE `item_image`
-  MODIFY `item_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `item_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;

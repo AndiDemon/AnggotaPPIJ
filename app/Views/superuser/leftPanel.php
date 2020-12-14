@@ -7,22 +7,45 @@
                         <a href="<?php echo base_url('home') ?>"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">Account</li><!-- /.menu-title -->
+
                     <li>
-                        <a href="<?php echo base_url('user') ?>"> <i class="menu-icon ti-user"></i>User </a>
-                    </li>
-                    
-                    <li class="menu-title">Storage</li><!-- /.menu-title -->
-                    <li>
-                        <a href="<?php echo base_url('item') ?>"> <i class="menu-icon ti-shopping-cart-full"></i>Item </a>
-                    </li>
-                    
-                    <li>
-                        <a href="<?php echo base_url('itemcategory') ?>"> <i class="menu-icon ti-tag"></i>Item Category</a>
+                        <a href="<?php echo base_url('member') ?>"> <i class="menu-icon ti-user"></i>Anggota </a>
                     </li>
 
-                    <li class="menu-title">Dealing</li><!-- /.menu-title -->
                     <li>
-                        <a href="<?php echo base_url('transaction') ?>"> <i class="menu-icon ti-package"></i>Transaction </a>
+                        <a href="<?php echo base_url('member') ?>"> <i class="menu-icon ti-medall"></i>Pengurus</a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo base_url('member') ?>"> <i class="menu-icon ti-medall"></i>Alumni</a>
+                    </li>
+                    
+                    <li class="menu-title">Afiliasi</li><!-- /.menu-title -->
+                    <li>
+                        <a href="<?php echo base_url('school') ?>"> <i class="menu-icon ti-blackboard"></i>Sekolah </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('komsat') ?>"> <i class="menu-icon ti-bookmark"></i>Komsat </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('korda') ?>"> <i class="menu-icon ti-bookmark"></i>Korda </a>
+                    </li>
+
+                    <li class="menu-title">Repository</li><!-- /.menu-title -->
+                    <li>
+                        <a href="<?php echo base_url('repository') ?>"> <i class="menu-icon ti-layers-alt"></i>Repo Jurnal</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('#') ?>"> <i class="menu-icon ti-unlock"></i>Artikel </a>
+                    </li>
+                    
+
+                    <li class="menu-title">Utilities</li><!-- /.menu-title -->
+                    <li>
+                        <a href="<?php echo base_url('userlevel') ?>"> <i class="menu-icon ti-layers-alt"></i>User Level </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('#') ?>"> <i class="menu-icon ti-unlock"></i>Access </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

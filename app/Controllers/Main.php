@@ -12,6 +12,9 @@ class Main extends BaseController
 	public function index()
 	{
 		$data['item'] = $this->M_main->get_item();
+		$title = $this->request->uri;
+		$title = explode("/", $title);
+		$header['title'] = $title[3];
 		
 		echo view('frontend/header');
 		echo view('frontend/menu');
@@ -26,6 +29,27 @@ class Main extends BaseController
 		echo view('frontend/main-close');
 		echo view('frontend/footer');
 		
+	}
+
+	public function en()
+	{
+		$header['categories'] = $this->M_main->get_categories();
+		$info['item'] = $this->M_main->get_item();
+		$container['dueitem'] = $this->M_main->get_itemExpiredSoon();
+
+		$title = $this->request->uri;
+		$title = explode("/", $title);
+		$header['title'] = $title[3];
+
+		echo view('en/header',$header);
+		echo view('en/class_container');
+		echo view('en/banner');
+		echo view('en/info',$info);
+		echo view('en/closed_div');
+		echo view('en/container',$container);
+		//echo view('en/cm');
+		//echo view('en/top');
+		echo view('en/footer',$header);
 	}
 
 }

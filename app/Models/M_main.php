@@ -8,6 +8,11 @@ class M_main extends Model{
         return $query->getResult('array');
 	}
 
+	public function get_itemExpiredSoon(){
+		$query=$this->db->query("SELECT * FROM item a, category b, collection c, user d, account e, item_image f WHERE a.category_id=b.category_id AND c.item_id=a.item_id AND c.user_id=d.user_id AND d.account_id=e.account_id AND a.item_id=f.item_id ORDER BY c.expired_date ASC LIMIT 6");
+        return $query->getResult('array');
+	}
+
 	public function get_itemDetail($id){
 		$query=$this->db->query("SELECT * FROM item a, category b, collection c, user d, account e, item_image f WHERE a.category_id=b.category_id AND c.item_id=a.item_id AND c.user_id=d.user_id AND d.account_id=e.account_id AND a.item_id=f.item_id AND a.item_id='".$id."'");
         return $query->getResult('array');
@@ -18,7 +23,7 @@ class M_main extends Model{
         return $query->getResult('array');
 	}
 
-	public function get_category(){
+	public function get_categories(){
 		$query=$this->db->query("SELECT * FROM category");
         return $query->getResult('array');
 	}

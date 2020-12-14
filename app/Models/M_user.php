@@ -2,61 +2,59 @@
 use CodeIgniter\Model;
 
 class M_user extends Model{
-	public function get_user(){
-		//return $this->db->table('user')->get()->getResultArray();
-		$query=$this->db->query("SELECT * FROM user a, account b, user_level c WHERE a.account_id=b.account_id AND b.user_level_id=c.user_level_id");
-        return $query->getResult('array');
-	}
 
-	public function get_countUser(){
-		//return $this->db->table('user')->get()->getResultArray();
-		$query=$this->db->query("SELECT count(user_id) as countUser FROM user");
-        return $query->getResult('array');
-	}
+	//ppij
 
-	public function get_userWhere($name){
-		$query=$this->db->query("SELECT * FROM user a, account b, user_level c WHERE a.account_id=b.account_id AND b.user_level_id=c.user_level_id AND b.account_name='".$name."'");
-        return $query->getResult('array');
-	}
-
+	//user level
 	public function get_user_level(){
 		$query=$this->db->query("SELECT * FROM user_level");
         return $query->getResult('array');
 	}
 
-	public function updateAccount($data,$name){
-		return $this->db->table('account')->update($data,array('account_name'=>$name));
+	public function insertUserLevel($data){
+		return $this->db->table('user_level')->insert($data);
 	}
 
-	public function updateUser($data,$id){
-		return $this->db->table('user')->update($data,array('user_id'=>$id));
+	public function deleteUserLevel($id){
+		return $this->db->table('user_level')->delete(array('user_level_id'=>$id));
 	}
 
-	public function getID($id){
-		//return $this->db->table('user')->get()->getResultArray();
-		$query=$this->db->query("SELECT account_id FROM account WHERE account_id='".$id."'");
+	public function updateUserLevel($data,$id){
+		return $this->db->table('user_level')->update($data,array('user_level_id'=>$id));
+	}
+
+	public function get_userlevelWhere($id){
+		$query=$this->db->query("SELECT * FROM user_level WHERE user_level_id='".$id."'");
+        return $query->getResult('array');
+	}
+	//end of user level
+
+	//account, member, afiliasi
+	public function get_member(){
+		$query=$this->db->query("SELECT a.*, b.account_id, b.user_level_id, c.*, d.*, e.school_id,e.school_name,e.komsat_id,f.komsat_id,f.komsat_name,f.korda_id,g.korda_id,g.korda_name FROM member a, account b, afiliasi c, user_level d, school e, komsat f, korda g WHERE a.account_id=b.account_id AND a.afiliasi_id=c.afiliasi_id AND b.user_level_id=d.user_level_id AND c.school_id=e.school_id AND e.komsat_id=f.komsat_id AND f.korda_id=g.korda_id");
         return $query->getResult('array');
 	}
 
-	public function getName($name){
-		//return $this->db->table('user')->get()->getResultArray();
-		$query=$this->db->query("SELECT account_name FROM account WHERE account_name='".$name."'");
+	public function get_school(){
+		$query=$this->db->query("SELECT a.korda_id, a.komsat_id, a.komsat_name, b.korda_id, b.korda_name, c.komsat_id, c.school_id, c.school_name, c.description FROM komsat a, korda b, school c WHERE a.korda_id=b.korda_id AND a.komsat_id=c.komsat_id");
         return $query->getResult('array');
 	}
 
-	public function insertAccount($data){
-		return $this->db->table('account')->insert($data);
+	public function get_jurnalWhereMember($id){
+		$query=$this->db->query("SELECT a.*, b.*, c.member_id, c.fullname FROM repository a, journal b, member c WHERE a.journal_id=b.journal_id AND a.member_id=c.member_id AND a.member_id='".$id."'");
+        return $query->getResult('array');
 	}
 
-	public function insertUser($data){
-		return $this->db->table('user')->insert($data);
+	//end of account, member, afiliasi
+
+	//Repo Jurnal
+	public function get_jurnal(){
+		$query=$this->db->query("SELECT a.*, b.*, c.member_id, c.fullname FROM repository a, journal b, member c WHERE a.journal_id=b.journal_id AND a.member_id=c.member_id");
+        return $query->getResult('array');
 	}
 
-	public function deleteAccount($id){
-		return $this->db->table('account')->delete(array('account_id'=>$id));
-	}
+	//end of Repo Jurnal
 
-	public function deleteUser($id){
-		return $this->db->table('user')->delete(array('user_id'=>$id));
-	}
+	//end ppij
+	
 }

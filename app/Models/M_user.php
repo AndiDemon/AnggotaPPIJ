@@ -5,6 +5,28 @@ class M_user extends Model{
 
 	//ppij
 
+	//signup
+	public function insertAccount($data){
+		return $this->db->table('account')->insert($data);
+	}
+
+	public function insertUser($data){
+		return $this->db->table('member')->insert($data);
+	}
+
+	public function getID($id){
+		//return $this->db->table('user')->get()->getResultArray();
+		$query=$this->db->query("SELECT account_id FROM account WHERE account_id='".$id."'");
+        return $query->getResult('array');
+	}
+
+	public function getName($name){
+		//return $this->db->table('user')->get()->getResultArray();
+		$query=$this->db->query("SELECT account_name FROM account WHERE account_name='".$name."'");
+        return $query->getResult('array');
+	}
+	//end of signup
+
 	//user level
 	public function get_user_level(){
 		$query=$this->db->query("SELECT * FROM user_level");

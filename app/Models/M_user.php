@@ -4,14 +4,24 @@ use CodeIgniter\Model;
 class M_user extends Model{
 
 	//ppij
+	//logged in info
+	public function get_memberWhere($id){
+		$query=$this->db->query("SELECT a.*, b.account_id, b.account_name, b.user_level_id, c.*, d.*, e.school_id,e.school_name,e.komsat_id,f.komsat_id,f.komsat_name,f.korda_id,g.korda_id,g.korda_name FROM member a, account b, afiliasi c, user_level d, school e, komsat f, korda g WHERE a.account_id=b.account_id AND a.afiliasi_id=c.afiliasi_id AND b.user_level_id=d.user_level_id AND c.school_id=e.school_id AND e.komsat_id=f.komsat_id AND f.korda_id=g.korda_id AND a.account_id='".$id."'");
+        return $query->getResult('array');
+	}
+
+	public function get_afiliasi($id){
+		$query=$this->db->query("SELECT a.*, b.*, c.*, d.* FROM afiliasi a, school b, komsat c, korda d WHERE a.school_id=b.school_id AND b.komsat_id=c.komsat_id AND c.korda_id=d.korda_id AND a.afiliasi_id='".$id."'");
+        return $query->getResult('array');
+	}
 
 	//signup
 	public function insertAccount($data){
 		return $this->db->table('account')->insert($data);
 	}
 
-	public function insertUser($data){
-		return $this->db->table('member')->insert($data);
+	public function insertUser($user){
+		return $this->db->table('member')->insert($user);
 	}
 
 	public function getID($id){
@@ -52,6 +62,10 @@ class M_user extends Model{
 	//end of user level
 
 	//account, member, afiliasi
+	public function updateMember($data){
+		return $this->db->table('member')->update($data,array('member_id'=>$data['member_id']));
+	}
+
 	public function get_member(){
 		$query=$this->db->query("SELECT a.*, b.account_id, b.user_level_id, c.*, d.*, e.school_id,e.school_name,e.komsat_id,f.komsat_id,f.komsat_name,f.korda_id,g.korda_id,g.korda_name FROM member a, account b, afiliasi c, user_level d, school e, komsat f, korda g WHERE a.account_id=b.account_id AND a.afiliasi_id=c.afiliasi_id AND b.user_level_id=d.user_level_id AND c.school_id=e.school_id AND e.komsat_id=f.komsat_id AND f.korda_id=g.korda_id");
         return $query->getResult('array');

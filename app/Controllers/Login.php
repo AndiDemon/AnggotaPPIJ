@@ -24,7 +24,7 @@ class Login extends BaseController
 
 	public function check(){
 		$username = $this->request->getPost('username');
-		$password = $this->request->getPost('pass');
+		$password = md5($this->request->getPost('pass'));
 
 		$check = $this->M_login->check($username,$password);
 
@@ -43,7 +43,7 @@ class Login extends BaseController
 			} else if ($check['user_level_id']==4){
 				return redirect()->to(base_url('home/komsat'));
 			} else if ($check['user_level_id']==5){
-				return redirect()->to(base_url('front/info'));
+				return redirect()->to(base_url('account/info'));
 			} else if ($check['user_level_id']==6){
 				return redirect()->to(base_url('home/alumni'));
 			} else if ($check['user_level_id']==7){
@@ -84,42 +84,64 @@ class Login extends BaseController
 	}
 
 	public function signup(){
+		echo('masuk di sign up');
 		$id = $this->generateID();
 		$data=[
 			'account_id' => 'acc'.$id,
 			'user_id' => 'usr'.$id,
 			'account_name' => $this->request->getPost('username'),
-			'password' => $this->request->getPost('password'),
+			'email' => $this->request->getPost('email'),
+			'password' => md5($this->request->getPost('pass')),
+			'repassword' => md5($this->request->getPost('repass')),
 			'user_level_id' => 5,
 		];
+
+		// echo($data['account_id']);
+		// echo($data['user_id']);
+		// echo($data['account_name']);
+		// echo($data['email']);
+		// echo($data['password']);
+		// echo($data['user_level_id']);
+		
 
 		//name validation
 		$checkName = $this->M_user->getName($data['account_name']);
 		if ($checkName!=null){
-			session()->setFlashdata('signup','Hmm! looks like someone has taken that name');
-			return redirect()->to(base_url('login/en'));
+			session()->set('error','Hmm! it looks like someone has taken that name');
+			return redirect()->to(base_url('front'));
 		}
 
-		// //password validation
-		// if ($data['password']!=$data['repassword']){
-		// 	session()->setFlashdata('signup','The password you input does not match');
-		// 	return redirect()->to(base_url('login/en'));
-		// } 
+		//password validation
+		if ($data['password']!=$data['repassword']){
+			session()->set('error','The password you input does not match');
+			return redirect()->to(base_url('front'));
+		} 
 
-		$account["account_id"] = $data["account_id"];
-		$account["account_name"] = $data["account_name"];
-		$account["account_password"] = $data["password"];
-		$account["user_level_id"] = $data["user_level_id"];
+		$account["account_id"] = $data['account_id'];
+		$account["account_name"] = $data['account_name'];
+		$account["account_password"] = $data['password'];
+		$account["user_level_id"] = $data['user_level_id'];
 
-		$user["member_id"] = $data["user_id"];
-		$user["email"] = "";
-		$user["contact"] = "";
-		$user["address_jp"] = "";
-		$user["account_id"] = $data["account_id"];
+		$user = [
+			'member_id' => $data['user_id'],
+			'fullname' => "",
+			'email' => $data['email'],
+			'contact' => "",
+			'emergency_jp' => "",
+			'emergency_id' => "",
+			'address_jp' => "",
+			'address_id' => "",
+			'avatar' => "default.png",
+			'description' => "",
+			'afiliasi_id' => "0",
+			'account_id' => $data['account_id'],
+			];
 
 		$this->M_user->insertAccount($account);
 		$this->M_user->insertUser($user);
 
+		// echo('name');
+		// echo($this->request->getPost('username'));
 		session()->set('id',$data['account_id']);
 		session()->set('username',$data['account_name']);
 		session()->set('user_level_id',$data['user_level_id']);

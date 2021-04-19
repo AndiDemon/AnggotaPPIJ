@@ -12,10 +12,19 @@ class Front extends BaseController
 	public function index()
 	{
 		//$data['countUser'] = $this->M_user->get_countUser();
+
+		//session()->setFlashdata('error','Hmm! it looks like someone has taken that name');
 		
 		echo view('front/header');
-		echo view('front/navigation');
-		echo view('front/start');
+		if(session()->get('user_level_id')==5){
+			echo view('front/navigation-account');
+
+			//put another feature
+			echo view('front/start');
+		} else {
+			echo view('front/navigation');
+			echo view('front/start');
+		}
 		echo view('front/partner');
 		echo view('front/features');
 		echo view('front/team');

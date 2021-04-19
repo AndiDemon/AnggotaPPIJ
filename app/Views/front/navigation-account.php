@@ -103,7 +103,7 @@
                                 <li><a href="components.html">FAQ</a></li>
                             </ul>
                         </li>
-                        <li><a href="index.html">Profile</a></li>
+                        <li><a href="<?php echo base_url('account/info');?>">Profile</a></li>
                     </ul><!--end navigation menu-->
                 </div><!--end navigation-->
             </div><!--end container-->

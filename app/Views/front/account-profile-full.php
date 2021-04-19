@@ -4,30 +4,32 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-12 d-lg-block d-none">
                         <div class="sidebar sticky-bar p-4 rounded shadow">
-                            <div class="widget">
+                            <!-- <div class="widget">
                                 <h5 class="widget-title">Followers :</h5>
                                 <div class="row mt-4">
                                     <div class="col-6 text-center">
                                         <i data-feather="user-plus" class="fea icon-ex-md text-primary mb-1"></i>
                                         <h5 class="mb-0">2588</h5>
                                         <p class="text-muted mb-0">Followers</p>
-                                    </div><!--end col-->
+                                    </div> --><!--end col-->
 
-                                    <div class="col-6 text-center">
+                                    <!-- <div class="col-6 text-center">
                                         <i data-feather="users" class="fea icon-ex-md text-primary mb-1"></i>
                                         <h5 class="mb-0">454</h5>
                                         <p class="text-muted mb-0">Following</p>
-                                    </div><!--end col-->
-                                </div><!--end row-->
-                            </div>
+                                    </div> --><!--end col-->
+                                <!-- </div> --><!--end row-->
+                            <!-- </div> -->
 
                             <div class="widget mt-4 pt-2">
-                                <h5 class="widget-title">Projects :</h5>
+
+                                <h5 class="widget-title">Masa Studi :</h5>
                                 <div class="progress-box mt-4">
                                     <h6 class="title text-muted">Progress</h6>
+                                    <br>
                                     <div class="progress">
-                                        <div class="progress-bar position-relative bg-primary" style="width:50%;">
-                                            <div class="progress-value d-block text-muted h6">24 / 48</div>
+                                        <div class="progress-bar position-relative bg-primary" style="width:1%;">
+                                            <div class="progress-value d-block text-muted h6">0 / 100</div>
                                         </div>
                                     </div>
                                 </div><!--end process box-->
@@ -101,96 +103,112 @@
                         </div>
                     </div><!--end col-->
 
+
                     <div class="col-lg-8 col-12">
+
                         <div class="border-bottom pb-4">
-                            <h5>Harry Potter</h5>
-                            <p class="text-muted mb-0">I have started my career as a trainee and prove my self and achieve all the milestone with good guidance and reach up to the project manager. In this journey, I understand all the procedure which make me a good developer, team leader, and a project manager.</p>
+                            
+                            <h5><?= $user[0]['fullname'];?></h5>
+
+                            <div class="col-md-7 text-md-left text-center mt-4 mt-sm-0">
+                                
+                            </div>
+                            <p class="text-muted mb-0"><?php if($user[0]['description']!="") { echo ($user[0]['description']); } 
+                                else {
+                                    echo ("Mau cerita apa nih..");
+                                }
+                            ?></p>
                         </div>
+
                         
                         <div class="border-bottom pb-4">
                             <div class="row">
                                 <div class="col-md-6 mt-4">
-                                    <h5>Personal Details :</h5>
+                                    <h5>Data Pribadi :</h5>
                                     <div class="mt-4">
                                         <div class="media align-items-center">
-                                            <i data-feather="mail" class="fea icon-ex-md text-muted mr-3"></i>
+                                            <i data-feather="phone" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
-                                                <h6 class="text-primary mb-0">Email :</h6>
-                                                <a href="javascript:void(0)" class="text-muted">kristajoseph0203@mail.com</a>
+                                                <h6 class="text-primary mb-0">Kontak :</h6>
+                                                <a href="javascript:void(0)" class="text-muted"><?= $user[0]['contact'];?></a>
                                             </div>
                                         </div>
                                         <div class="media align-items-center mt-3">
                                             <i data-feather="bookmark" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
-                                                <h6 class="text-primary mb-0">Skills :</h6>
-                                                <a href="javascript:void(0)" class="text-muted">html</a>, <a href="javascript:void(0)" class="text-muted">css</a>, <a href="javascript:void(0)" class="text-muted">js</a>, <a href="javascript:void(0)" class="text-muted">mysql</a>
+                                                <h6 class="text-primary mb-0">Kontak Emergency di Jepang :</h6>
+                                                <a href="javascript:void(0)" class="text-muted"><?= $user[0]['emergency_jp'];?></a>
                                             </div>
                                         </div>
                                         <div class="media align-items-center mt-3">
                                             <i data-feather="italic" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
-                                                <h6 class="text-primary mb-0">Language :</h6>
-                                                <a href="javascript:void(0)" class="text-muted">English</a>, <a href="javascript:void(0)" class="text-muted">Japanese</a>, <a href="javascript:void(0)" class="text-muted">Chinese</a>
+                                                <h6 class="text-primary mb-0">Kontak Emergency di Indonesia :</h6>
+                                                <a href="javascript:void(0)" class="text-muted"><?= $user[0]['emergency_id'];?></a>
                                             </div>
                                         </div>
                                         <div class="media align-items-center mt-3">
                                             <i data-feather="globe" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
-                                                <h6 class="text-primary mb-0">Website :</h6>
-                                                <a href="javascript:void(0)" class="text-muted">www.kristajoseph.com</a>
+                                                <h6 class="text-primary mb-0">Alamat di Jepang :</h6>
+                                                <a href="javascript:void(0)" class="text-muted"><?= $user[0]['address_jp'];?></a>
+                                            </div>
+                                        </div>
+                                        <div class="media align-items-center mt-3">
+                                            <i data-feather="globe" class="fea icon-ex-md text-muted mr-3"></i>
+                                            <div class="media-body">
+                                                <h6 class="text-primary mb-0">Alamat di Indonesia :</h6>
+                                                <a href="javascript:void(0)" class="text-muted"><?= $user[0]['address_id'];?></a>
                                             </div>
                                         </div>
                                         <div class="media align-items-center mt-3">
                                             <i data-feather="gift" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
-                                                <h6 class="text-primary mb-0">Birthday :</h6>
-                                                <p class="text-muted mb-0">2nd March, 1996</p>
+                                                <h6 class="text-primary mb-0">Birthdate :</h6>
+                                                <p class="text-muted mb-0"><?= $user[0]['birthdate'];?></p>
                                             </div>
-                                        </div>
+                                        </div><!-- 
                                         <div class="media align-items-center mt-3">
                                             <i data-feather="map-pin" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
                                                 <h6 class="text-primary mb-0">Location :</h6>
                                                 <a href="javascript:void(0)" class="text-muted">Beijing, China</a>
                                             </div>
-                                        </div>
-                                        <div class="media align-items-center mt-3">
-                                            <i data-feather="phone" class="fea icon-ex-md text-muted mr-3"></i>
-                                            <div class="media-body">
-                                                <h6 class="text-primary mb-0">Cell No :</h6>
-                                                <a href="javascript:void(0)" class="text-muted">(+12) 1254-56-4896</a>
-                                            </div>
-                                        </div>
+                                        </div> -->
+                                        
                                     </div>
                                 </div><!--end col-->
 
                                 <div class="col-md-6 mt-4 pt-2 pt-sm-0">
-                                    <h5>Experience :</h5>
+                                    <h5>Afiliasi :</h5>
 
                                     <div class="media key-feature align-items-center p-3 rounded shadow mt-4">
                                         <img src="<?php echo base_url('templates/landrick/images/job/Circleci.svg')?>" class="avatar avatar-ex-sm" alt="">
                                         <div class="media-body content ml-3">
-                                            <h4 class="title mb-0">Senior Web Developer</h4>
-                                            <p class="text-muted mb-0">3 Years Experience</p>
-                                            <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">CircleCi</a> @London, UK</p>    
+                                            <h4 class="title mb-0">Korda</h4>
+                                            <p class="text-muted mb-0"><?= $afiliasi[0]['korda_name'];?></p>
+                                            <!-- <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">CircleCi</a> @London, UK</p>     -->
                                         </div>
                                     </div>
 
                                     <div class="media key-feature align-items-center p-3 rounded shadow mt-4">
                                         <img src="<?php echo base_url('templates/landrick/images/job/Codepen.svg')?>" class="avatar avatar-ex-sm" alt="">
                                         <div class="media-body content ml-3">
-                                            <h4 class="title mb-0">Web Designer</h4>
-                                            <p class="text-muted mb-0">2 Years Experience</p>
-                                            <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">Codepen</a> @Washington D.C, USA</p>    
+                                            <h4 class="title mb-0">Komsat</h4>
+                                            <p class="text-muted mb-0"><?= $afiliasi[0]['komsat_name'];?></p>
+                                            <!-- <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">Codepen</a> @Washington D.C, USA</p>     -->
                                         </div>
                                     </div>
 
                                     <div class="media key-feature align-items-center p-3 rounded shadow mt-4">
                                         <img src="<?php echo base_url('templates/landrick/images/job/Gitlab.svg')?>" class="avatar avatar-ex-sm" alt="">
                                         <div class="media-body content ml-3">
-                                            <h4 class="title mb-0">UI Designer</h4>
-                                            <p class="text-muted mb-0">2 Years Experience</p>
-                                            <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">Gitlab</a> @Perth, Australia</p>    
+                                            <h4 class="title mb-0"><?= $afiliasi[0]['school_name'];?></h4>
+                                            <p class="text-muted mb-0">Jenjang Pendidikan : <?= $afiliasi[0]['degree'];?></p>
+                                            <p class="text-muted mb-0">Fakultas : <?= $afiliasi[0]['faculty'];?></p>
+                                            <p class="text-muted mb-0">Jurusan : <?= $afiliasi[0]['department'];?></p>
+                                            <p class="text-muted mb-0">Laboratory : <?= $afiliasi[0]['laboratory'];?></p>
+                                            <!-- <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">Gitlab</a> @Perth, Australia</p>     -->
                                         </div>
                                     </div>
                                 </div><!--end col-->
@@ -254,3 +272,5 @@
             </div><!--end container-->
         </section><!--end section-->
         <!-- Profile End -->
+
+        

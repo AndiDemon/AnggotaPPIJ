@@ -18,15 +18,20 @@
                         <div class="card shadow rounded border-0 ml-lg-4">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Daftarkan Dirimu Sebagai Anggota PPI Jepang</h5>
-
-                                <form class="login-form mt-4" action="<?php echo base_url('login/signup'); ?>" method="POST">
+                                <form class="login-form mt-4" action="<?= base_url('login/signup'); ?>" method="POST">
                                     <div class="row">
+                                        <?php if (isset($_SESSION['error'])){?>
+                                        <div class="col-md-12">
+                                            <div class="alert alert-danger" role="alert"><?php echo session()->get('error');?>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
                                         <div class="col-md-12">
                                             <div class="form-group">                                               
-                                                <label>First name <span class="text-danger">*</span></label>
+                                                <label>Username <span class="text-danger">*</span></label>
                                                 <div class="position-relative">
                                                     <i data-feather="user" class="fea icon-sm icons"></i>
-                                                    <input type="text" class="form-control pl-5" placeholder="First Name" name="s" required="">
+                                                    <input type="text" class="form-control pl-5" placeholder="Username" name="username" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -44,18 +49,27 @@
                                                 <label>Password <span class="text-danger">*</span></label>
                                                 <div class="position-relative">
                                                     <i data-feather="key" class="fea icon-sm icons"></i>
-                                                    <input type="password" class="form-control pl-5" placeholder="Password" required="">
+                                                    <input type="password" class="form-control pl-5" placeholder="Password" name="pass" required="">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Confirm Password <span class="text-danger">*</span></label>
+                                                <div class="position-relative">
+                                                    <i data-feather="key" class="fea icon-sm icons"></i>
+                                                    <input type="password" class="form-control pl-5" placeholder="Confirm Your Password" name="repass" required="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-md-12">
                                             <div class="form-group">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                                                     <label class="custom-control-label" for="customCheck1">I Accept <a href="#" class="text-primary">Terms And Condition</a></label>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="col-md-12">
                                             <button class="btn btn-block btn-primary">Register</button>
                                         </div>
@@ -67,4 +81,4 @@
                 </div>
             </div>
         </section><!--end section-->
-        <!-- End Hero -->
+        <!-- End Hero

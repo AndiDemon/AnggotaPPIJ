@@ -129,24 +129,19 @@
                                         <div class="media align-items-center">
                                             <i data-feather="phone" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
+                                                <h6 class="text-primary mb-0">Tempat, Tanggal Lahir :</h6>
+                                                <a href="javascript:void(0)" class="text-muted"><?= $user[0]['place_of_birth'];?>, <?= $user[0]['birthdate'];?></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="media align-items-center">
+                                            <i data-feather="phone" class="fea icon-ex-md text-muted mr-3"></i>
+                                            <div class="media-body">
                                                 <h6 class="text-primary mb-0">Kontak :</h6>
                                                 <a href="javascript:void(0)" class="text-muted"><?= $user[0]['contact'];?></a>
                                             </div>
                                         </div>
-                                        <div class="media align-items-center mt-3">
-                                            <i data-feather="bookmark" class="fea icon-ex-md text-muted mr-3"></i>
-                                            <div class="media-body">
-                                                <h6 class="text-primary mb-0">Kontak Emergency di Jepang :</h6>
-                                                <a href="javascript:void(0)" class="text-muted"><?= $user[0]['emergency_jp'];?></a>
-                                            </div>
-                                        </div>
-                                        <div class="media align-items-center mt-3">
-                                            <i data-feather="italic" class="fea icon-ex-md text-muted mr-3"></i>
-                                            <div class="media-body">
-                                                <h6 class="text-primary mb-0">Kontak Emergency di Indonesia :</h6>
-                                                <a href="javascript:void(0)" class="text-muted"><?= $user[0]['emergency_id'];?></a>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="media align-items-center mt-3">
                                             <i data-feather="globe" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
@@ -155,25 +150,19 @@
                                             </div>
                                         </div>
                                         <div class="media align-items-center mt-3">
-                                            <i data-feather="globe" class="fea icon-ex-md text-muted mr-3"></i>
-                                            <div class="media-body">
-                                                <h6 class="text-primary mb-0">Alamat di Indonesia :</h6>
-                                                <a href="javascript:void(0)" class="text-muted"><?= $user[0]['address_id'];?></a>
-                                            </div>
-                                        </div>
-                                        <div class="media align-items-center mt-3">
                                             <i data-feather="gift" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
                                                 <h6 class="text-primary mb-0">Birthdate :</h6>
                                                 <p class="text-muted mb-0"><?= $user[0]['birthdate'];?></p>
                                             </div>
-                                        </div><!-- 
+                                        </div>
+                                        <!-- 
                                         <div class="media align-items-center mt-3">
                                             <i data-feather="map-pin" class="fea icon-ex-md text-muted mr-3"></i>
                                             <div class="media-body">
                                                 <h6 class="text-primary mb-0">Location :</h6>
                                                 <a href="javascript:void(0)" class="text-muted">Beijing, China</a>
-                                            </div>
+                                        </div>
                                         </div> -->
                                         
                                     </div>
@@ -181,7 +170,6 @@
 
                                 <div class="col-md-6 mt-4 pt-2 pt-sm-0">
                                     <h5>Afiliasi :</h5>
-
                                     <div class="media key-feature align-items-center p-3 rounded shadow mt-4">
                                         <img src="<?php echo base_url('templates/landrick/images/job/Circleci.svg')?>" class="avatar avatar-ex-sm" alt="">
                                         <div class="media-body content ml-3">

@@ -15,6 +15,21 @@ class M_user extends Model{
         return $query->getResult('array');
 	}
 
+	public function get_prefecture(){
+		$query=$this->db->query("SELECT * FROM province");
+        return $query->getResult('array');
+	}	
+
+	public function get_korda(){
+		$query=$this->db->query("SELECT * FROM korda");
+        return $query->getResult('array');
+	}
+
+	public function get_komsat($id){
+		$query=$this->db->query("SELECT * FROM komsat WHERE korda_id='".$id."'");
+        return $query->getResult('array');
+	}
+
 	//signup
 	public function insertAccount($data){
 		return $this->db->table('account')->insert($data);

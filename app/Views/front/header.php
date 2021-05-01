@@ -23,7 +23,7 @@
         <!-- Main Css -->
         <link href="<?php echo base_url('templates/landrick/css/style.css')?>" rel="stylesheet" type="text/css" id="theme-opt" />
         <link href="<?php echo base_url('templates/landrick/css/colors/default.css')?>" rel="stylesheet" id="color-opt">
-
+        
     </head>
 
     <body>

@@ -103,5 +103,26 @@
         <script src="https://unicons.iconscout.com/release/v3.0.3/script/monochrome/bundle.js"></script>
         <!-- Main Js -->
         <script src="<?php echo base_url('templates/landrick/js/app.js')?>"></script>
+       
+       <script>
+        $(document).ready(function() {
+            $('#korda').change(function() {
+                var id = $(this).val();
+                console.log(id);
+                $.ajax({
+                    url: "<?php echo base_url('account/getkomsat'); ?>",
+                    method: "POST",
+                    data: {
+                        id: id
+                    },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "JSON",
+                    success: function(response) {
+                        $('#komsat').html(response);
+                    }
+                });
+            });
+        });
+    </script>
     </body>
 </html>

@@ -19,6 +19,8 @@ class Account extends BaseController
 
 		$data['user'] = $this->M_user->get_memberWhere(session()->get('id'));
 		$data['afiliasi'] = $this->M_user->get_afiliasi($data['user'][0]['afiliasi_id']);
+		$data['korda'] = $this->M_user->get_korda();
+		$data['prefecture'] = $this->M_user->get_prefecture();
 
 		echo view('front/header');
 		echo view('front/navigation-account');
@@ -28,6 +30,10 @@ class Account extends BaseController
 	}
 
 	public function updateMember(){
+		$prefecture=[
+			'prefecture_id' => $this->request->getPost('prefecture')
+			];
+
 		$data=[
 			'member_id' => $this->request->getPost('member_id'),
 			'fullname' => $this->request->getPost('fullname'),
@@ -46,4 +52,16 @@ class Account extends BaseController
 		return redirect()->to(base_url('account/info'));
 	}
 
+	public function getkomsat(){
+		$idKorda = $this->input->post('id');
+		$data = $this->M_user->get_komsat($idKorda);
+		$output = '<option value="">--Pilih Komsat-- </option>';
+        foreach ($data as $row) {
+           $output .= '<option value="' . $row->komsat_id . '"> ' . $row->komsat_name . '</option>';
+        }
+		$this->output->set_content_type('application/json')->set_output(json_encode($output));
+	}
 }
+
+
+//C{EjRjQo=X%S

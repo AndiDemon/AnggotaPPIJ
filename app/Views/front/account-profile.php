@@ -54,8 +54,9 @@
                         <div class="modal-body p-0">
                             <div class="container-fluid px-0">
                                 <div class="row align-items-center no-gutters">
-                                    <div class="col-lg-6 col-md-5">
+                                    <div class="col-lg-6 col-md-7">
                                         <img src="<?php echo base_url('templates/landrick/avatar/default.png')?>" class="img-fluid" alt="">
+                                        
                                     </div><!--end col-->
 
                                     <div class="col-lg-6 col-md-7">
@@ -81,6 +82,29 @@
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
+                                                        <label>Jenis Kelamin <span class="text-danger">*</span></label>
+                                                        <div class="position-relative">
+                                                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                            <select class="form-control pl-5">
+                                                                <optgroup>
+                                                                    <option value="M">Laki-laki</option>
+                                                                    <option value="F">Perempuan</option>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Tempat Lahir </label>
+                                                        <div class="position-relative">
+                                                            <i data-feather="phone" class="fea icon-sm icons"></i>
+                                                            <input type="text" class="form-control pl-5" placeholder="Tempat Lahir Lahir" name="place_of_birth" value="<?= $user[0]['place_of_birth'];?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
                                                         <label>Birthdate</label>
                                                         <div class="position-relative">
                                                             <i data-feather="phone" class="fea icon-sm icons"></i>
@@ -97,6 +121,28 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <!-- alamat -->
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Prefecture Saat Ini <span class="text-danger">*</span></label>
+                                                        <div class="position-relative">
+                                                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                            <select class="form-control pl-5" id="prefecture" name="prefecture">
+                                                                <optgroup>
+                                                                    <!-- foreach prefecture di Jepang -->
+                                                                    <option value="">Pilih Prefecture</option>
+                                                                    <?php foreach($prefecture as $row){?>
+                                                                        <option value="<?php echo $row['province_id'];?>"><?php echo $row['province']?></option>
+                                                                    <?php } ?>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- end alamat -->
+                                                <!-- 
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label>Emergency Contact di Jepang</label>
@@ -132,7 +178,7 @@
                                                             <input type="text" class="form-control pl-5" placeholder="Alamat di Indonesia" name="address_id" value="<?= $user[0]['address_id'];?>">
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label>Avatar</label>
@@ -149,6 +195,54 @@
                                                             <i data-feather="message-circle" class="fea icon-sm icons"></i>
                                                             <input type="text" class="form-control pl-5" placeholder="Apa yang kamu pikirkan?" name="description" value="<?= $user[0]['description'];?>">
                                                             <input type="hidden" class="form-control pl-5"name="member_id" value="<?= $user[0]['member_id'];?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Detail PPIJ -->
+                                                <label>Afiliasi <span class="text-danger">*</span></label>
+                                                    
+                                                <!-- afiliasi PPIJ -->
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Korda <span class="text-danger">*</span></label>
+                                                        <div class="position-relative">
+                                                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                            <select class="form-control pl-5" id="korda" name="korda">
+                                                                <!-- foreach prefecture di Jepang -->
+                                                                <option value="">Pilih Korda</option>
+                                                                <?php foreach($korda as $row){?>
+                                                                    <option value="<?php echo $row['korda_id'];?>"><?php echo $row['korda_name']?></option>
+                                                                <?php } ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Komsat <span class="text-danger">*</span></label>
+                                                        <div class="position-relative">
+                                                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                            <select class="form-control pl-5" name="komsat" id="komsat">
+                                                                <!-- foreach prefecture di Jepang -->
+                                                                <option value="">Pilih Komsat</option>
+                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Sekolah <span class="text-danger">*</span></label>
+                                                        <div class="position-relative">
+                                                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                            <select class="form-control pl-5" name="school" id="school">
+                                                                <optgroup>
+                                                                    <!-- foreach prefecture di Jepang -->
+                                                                    <option value="">Pilih Sekolah</option>
+                                                                    
+                                                                </optgroup>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -183,4 +277,5 @@
                     </div>
                 </div>
             </div>
-            <!-- Login Form End -->
+
+            <!-- Login Form End
